@@ -1,7 +1,6 @@
 # Sutol
 
-s - u - t - o - l
-l - o - t - u - s
+s - u - t - o - l - o - t - u - s
 
 `sutol` is a simple CLI test tool for Filecoin miner.
 

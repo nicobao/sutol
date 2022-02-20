@@ -46,4 +46,4 @@ Therefore the current version of `sutol` actually tests lotus-daemon FIRST and t
 
 ## License
 
-This software is released under the [BSD-2-Clause Plus Patent](https://spdx.org/licenses/BSD-2-Clause-Patent.html) license.
+This software is released under the [BSD-2-Clause Plus Patent](./LICENSE) license.

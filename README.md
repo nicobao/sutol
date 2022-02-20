@@ -43,3 +43,7 @@ Ideally, we would like to be able to talk DIRECTLY to the miner software (i.e lo
 Because as is, we are limited to what lotus-daemon validates from our requests, so we don't have complete freedom as to what is actually sent to the miner.
 
 Therefore the current version of `sutol` actually tests lotus-daemon FIRST and then, if the request passes, tests the miner.
+
+## License
+
+This software is released under the [BSD-2-Clause Plus Patent](https://spdx.org/licenses/BSD-2-Clause-Patent.html) license.

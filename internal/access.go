@@ -1,13 +1,14 @@
 package internal
 
 import (
+	"net/http"
+
 	"github.com/spf13/cobra"
 )
 
-func LoadTokenAndAddr(cmd *cobra.Command) (string, string) {
-	// Load data from
-	// Returns <token>, <addr>   example: KSEKE9329ejd http:localhost:1234
+func GetHeadersAndAddr(cmd *cobra.Command) (http.Header, string) {
 	token, _ := cmd.Flags().GetString("token")
 	addr, _ := cmd.Flags().GetString("addr")
-	return token, addr
+	headers := http.Header{"Authorization": []string{"Bearer " + token}}
+	return headers, addr
 }

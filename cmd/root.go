@@ -16,7 +16,7 @@ import (
 var (
 	cfgFile string
 	token   string
-	url     string
+	addr    string
 	rootCmd = &cobra.Command{
 		Use:   "sutol",
 		Short: "A simple CLI to test deal proposals to Filecoin miner.",
@@ -42,24 +42,22 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is golang:os.UseConfigDir()/sutol/.sutol.yaml, i.e in Linux $HOME/.config/sutol/.sutol.yaml)")
 	rootCmd.PersistentFlags().StringVarP(&token, "token", "t", "", "Token to connect to lotus-daemon (default to env var SUTOL_TOKEN else value in conf file else empty string)")
-	rootCmd.PersistentFlags().StringVarP(&url, "url", "u", "", "URL of the lotus-daemon to connect to (default to env var SUTOL_URL else value in conf file else 'http://localhost:1234')")
+	rootCmd.PersistentFlags().StringVarP(&addr, "addr", "u", "", "Socket address (IP/hostname:port) of the lotus-daemon to connect to (default to env var SUTOL_ADDR else value in conf file else 'localhost:1234')")
 	viper.BindPFlag("token", rootCmd.PersistentFlags().Lookup("token"))
-	viper.BindPFlag("url", rootCmd.PersistentFlags().Lookup("url"))
+	viper.BindPFlag("addr", rootCmd.PersistentFlags().Lookup("addr"))
 	viper.SetDefault("token", "")
-	viper.SetDefault("url", "http://localhost:1234")
-	// rootCmd.Flags().StringVar("url", "u", false, "URL of the lotus-daemon")
+	viper.SetDefault("addr", "localhost:1234")
 }
 
 func initConfig() {
 	viper.SetEnvPrefix("sutol")
 	viper.BindEnv("token")
-	viper.BindEnv("url")
+	viper.BindEnv("addr")
 	if cfgFile != "" {
 		viper.SetConfigFile(cfgFile)
 	} else {
 		configDir, err := os.UserConfigDir()
 		configDir = configDir + "/sutol"
-		fmt.Println("userconfigdir:", configDir)
 		cobra.CheckErr(err)
 
 		viper.AddConfigPath(configDir)
@@ -72,6 +70,6 @@ func initConfig() {
 	}
 
 	token = viper.GetString("token")
-	url = viper.GetString("url")
+	addr = viper.GetString("addr")
 
 }

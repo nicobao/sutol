@@ -47,6 +47,10 @@ func init() {
 }
 
 func initConfig() {
+	initConfigAndPrint(true)
+}
+
+func initConfigAndPrint(doPrint bool) {
 	viper.SetEnvPrefix("sutol")
 	replacer := strings.NewReplacer("-", "_")
 	viper.SetEnvKeyReplacer(replacer) // replace `-` with `_` in environment variables
@@ -64,7 +68,9 @@ func initConfig() {
 	}
 
 	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", viper.ConfigFileUsed())
+		if doPrint {
+			fmt.Println("Using config file:", viper.ConfigFileUsed())
+		}
 	}
 
 	token = viper.GetString("token")

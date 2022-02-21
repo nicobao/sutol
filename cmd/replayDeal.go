@@ -88,7 +88,7 @@ var (
 
 func init() {
 	rootCmd.AddCommand(replayDealCmd)
-	initConfig() // TODO fix that,  see https://github.com/spf13/cobra/issues/1176
+	initConfigAndPrint(false) // TODO fix that,  see https://github.com/spf13/cobra/issues/1176
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

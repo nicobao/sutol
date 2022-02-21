@@ -13,7 +13,7 @@ For now this CLI:
 
 ## Installation
 
-Run `go get -u github.com/nicobao/sutol`
+Run `go get github.com/nicobao/sutol`
 
 ## Usage
 

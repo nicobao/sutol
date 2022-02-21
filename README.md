@@ -35,6 +35,7 @@ It would be nice to be able to send any JSON body to the ClientStartDeal RPC. Th
 - [ ] Make miner address optionally set by flag
 - [x] Make the info we cannot know (or don't know how to know) from previous deals to be optionally set by flag
 - [ ] Pretty-print info from list-deals ... or find a way to print the Cid from `lotus client list-deals`
+- [ ] Add `-v` version command, and associated CI + tag & semantic versioning
 
 ## Limitations and long-term goal
 

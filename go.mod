@@ -4,7 +4,9 @@ go 1.17
 
 require (
 	github.com/filecoin-project/go-jsonrpc v0.1.5
+	github.com/filecoin-project/go-state-types v0.1.3
 	github.com/filecoin-project/lotus v1.14.1
+	github.com/ipfs/go-cid v0.1.0
 	github.com/spf13/cobra v1.3.0
 	github.com/spf13/viper v1.10.1
 )
@@ -33,7 +35,6 @@ require (
 	github.com/filecoin-project/go-hamt-ipld v0.1.5 // indirect
 	github.com/filecoin-project/go-hamt-ipld/v2 v2.0.0 // indirect
 	github.com/filecoin-project/go-hamt-ipld/v3 v3.1.0 // indirect
-	github.com/filecoin-project/go-state-types v0.1.3 // indirect
 	github.com/filecoin-project/go-statestore v0.1.1 // indirect
 	github.com/filecoin-project/specs-actors v0.9.14 // indirect
 	github.com/filecoin-project/specs-actors/v2 v2.3.5 // indirect
@@ -66,7 +67,6 @@ require (
 	github.com/ipfs/bbloom v0.0.4 // indirect
 	github.com/ipfs/go-block-format v0.0.3 // indirect
 	github.com/ipfs/go-blockservice v0.1.7 // indirect
-	github.com/ipfs/go-cid v0.1.0 // indirect
 	github.com/ipfs/go-datastore v0.4.6 // indirect
 	github.com/ipfs/go-graphsync v0.10.6 // indirect
 	github.com/ipfs/go-ipfs-blockstore v1.0.4 // indirect

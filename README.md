@@ -13,11 +13,11 @@ For now this CLI:
 
 ## Installation
 
-Run `go get github.com/nicobao/sutol`
+Run `go get -u github.com/nicobao/sutol`
 
 ## Usage
 
-Run `sutol help` for usage info.
+Run `sutol -h` for usage info.
 
 ## Development
 
@@ -33,7 +33,7 @@ It would be nice to be able to send any JSON body to the ClientStartDeal RPC. Th
 
 - [x] Use existing proposalCid as input of replay-deal instead of hard-coding one
 - [ ] Make miner address optionally set by flag
-- [ ] Make the info we cannot know (or don't know how to know) from previous deals to be optionally set by flag
+- [x] Make the info we cannot know (or don't know how to know) from previous deals to be optionally set by flag
 - [ ] Pretty-print info from list-deals ... or find a way to print the Cid from `lotus client list-deals`
 
 ## Limitations and long-term goal

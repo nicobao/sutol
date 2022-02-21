@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -47,8 +48,9 @@ func init() {
 
 func initConfig() {
 	viper.SetEnvPrefix("sutol")
-	viper.BindEnv("token")
-	viper.BindEnv("addr")
+	replacer := strings.NewReplacer("-", "_")
+	viper.SetEnvKeyReplacer(replacer) // replace `-` with `_` in environment variables
+	viper.AutomaticEnv()
 	if cfgFile != "" {
 		viper.SetConfigFile(cfgFile)
 	} else {

@@ -1,0 +1,6 @@
+# This is an example config file to put in $HOME/config/sutol/.sutol.yaml in Linux - or your default config path/sutol in other OS
+token: theadmintokengeneratedfromlotus
+addr: 16.47.40.163:1234
+fast-retrieval: true
+deal-start-epoch: 3
+provider-collateral: 4

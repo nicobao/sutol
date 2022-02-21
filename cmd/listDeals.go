@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net/http"
 
 	jsonrpc "github.com/filecoin-project/go-jsonrpc"
 	lotusapi "github.com/filecoin-project/lotus/api"
-	"github.com/nicobao/sutol/internal"
 
 	"github.com/spf13/cobra"
 )
@@ -19,7 +19,7 @@ var listDealsCmd = &cobra.Command{
 	Long:  `List deals already sent by this lotus instance`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var api lotusapi.FullNodeStruct
-		headers, addr := internal.GetHeadersAndAddr(cmd)
+		headers := http.Header{"Authorization": []string{"Bearer " + token}}
 		closer, err := jsonrpc.NewMergeClient(context.Background(), "ws://"+addr+"/rpc/v0", "Filecoin", []interface{}{&api.Internal, &api.CommonStruct.Internal}, headers)
 		if err != nil {
 			log.Fatalf("creating new merge client: %s", err)
